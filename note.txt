@@ -1,0 +1,10 @@
+If you follow the instructions in the official Rust book, you will do all of your work using Cargo. The book introduces Cargo in the first chapter. 99.5% of Rust developers never use rustc directly, and doing so is simply going to lead you to pain.
+
+Cargo automatically sets up a directory structure where build artifacts go into the target directory and this directory is added to .gitignore. You have nothing else to do.
+
+You could do the same thing by hand and ignore the build output directory (you really shouldn't though, it's not worth it to avoid Cargo)
+
+	$ mkdir target
+	$ rustc -o target/example example.rs
+	$ ./target/example
+	$ echo 'target/' >> .gitignore
