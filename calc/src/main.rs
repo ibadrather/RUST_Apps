@@ -1,6 +1,6 @@
 // Web microservice for calculating mathemtical operations
 
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 
 
 #[get("/")]
@@ -48,3 +48,5 @@ async fn main() -> std::io::Result<()> {
     .await
 
 }
+
+// http://127.0.0.1:8080/divide/2/2
