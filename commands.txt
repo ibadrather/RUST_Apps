@@ -1,0 +1,15 @@
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# new project
+cargo new MLOps
+
+# run
+cd MLOps
+cargo run
+
+# to format the code
+make format
+
+# lint
+make lint
