@@ -1,113 +1,49 @@
-// 3.2 Data Types
 
-// 1. Types
-fn types() {
-    let guess: u32 = "42".parse().expect("Not a number!");
-
-    let x = 2.0; // f64
-
-    let y: f32 = 3.0; // f32
-
-    // addition
-    let sum = 5 + 10;
-
-    // subtraction
-    let difference = 95.5 - 4.3;
-
-    // multiplication
-    let product = 4 * 30;
-
-    // division
-    let quotient = 56.7 / 32.2;
-    let truncated = -5 / 3; // Results in -1
-
-    // remainder
-    let remainder = 43 % 5;
-
-    let t = true;
-
-    let f: bool = false; // with explicit type annotation
-
-    let t: bool = true;
-    let t = 22;
-
-    println!("{t}");
-
-    let c = 'z';
-    let z: char = 'ℤ'; // with explicit type annotation
-    let heart_eyed_cat = '😻';
-
-    println!("{c}, {z}, {heart_eyed_cat}")
-}
-
-
-// 2. Compound Types
-
-fn compound_types() {
-    let tup: (i32, f64, u8) = (500, 6.4, 1);
-
-    let tup2 = (500, 6.4, 1);
-
-    let (x, y, z) = tup2;
-
-    println!("The value of y is: {y}");
-
-    let x: (i32, f64, u8) = (500, 6.4, 1);
-
-    let five_hundred = x.0;
-
-    let six_point_four = x.1;
-
-    let one = x.2;
-
-    println!("{one}")
-}
-
-// 3. Array Types
-
-fn array_types(){
-    let a = [1, 2, 3, 4, 5];
-
-    let months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
-
-    let a: [i32; 5] = [1, 2, 3, 4, 5];
-
-    let a = [3; 5];
-
-    let first = a[0];
-    let second = a[1];
-
-}
-
-use std::io;
-
-fn invalid_array_access() {
-    let a = [1, 2, 3, 4, 5];
-
-    println!("Please enter an array index.");
-
-    let mut index = String::new();
-
-    io::stdin()
-        .read_line(&mut index)
-        .expect("Failed to read line");
-
-    let index: usize = index
-        .trim()
-        .parse()
-        .expect("Index entered was not a number");
-
-    let element = a[index];
-
-    println!("The value of the element at index {index} is: {element}");
-}
+// Main function that we use to run everything
 fn main() {
-    // types();
+    println!("This is the main function");
 
-    // compound_types();
+    another_function();
 
-    // array_types();
+    five();
 
-    invalid_array_access();
+    what_is_the_number(20);
+
+    print_labeled_measurement(5, 'm');
+
+    function_with_expression();
+
+    let num: i32 = 19;
+    let res = plus_one(num);
+    println!("{num} + 1 = {res}");
+}
+
+// Simple function that prints somethinf
+fn another_function() {
+    println!("This is another function");
+}
+
+fn five() -> i32 {
+    5
+}
+
+fn what_is_the_number(x: i32) {
+    println!("The number is {x}");
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value}{unit_label}");
+}
+
+
+fn function_with_expression() {
+    let y = {
+        let x = 3;
+        x + 1
+    };
+    println!("The value of y is: {y}");
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
 }
